@@ -25,10 +25,8 @@ describe Rover do
     it 'delegates to probe to take sample' do
       probe = Minitest::Mock.new
       probe.expect(:take_sample, nil)
-
       rover = Rover.new(probe)
       rover.survey
-
       assert probe.verify
     end
 
